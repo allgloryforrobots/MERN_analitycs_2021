@@ -7,9 +7,10 @@ const analyticsRoutes = require('./routes/analytics')
 const categoryRoutes = require('./routes/category')
 const orderRoutes = require('./routes/order')
 const positionRoutes = require('./routes/position')
+const keys = require('./config/keys')
 const app = express()
 
-mongoose.connect('')
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(()=> console.log('MongoDB connected'))
 	.catch(error => console.log(error))
 
